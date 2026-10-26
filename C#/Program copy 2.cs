@@ -1,12 +1,17 @@
-﻿namespace CalculaDobro;
+﻿namespace CustoCarro;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Informe um número: ");
-        int numero = int.Parse( Console.ReadLine() );
-        int dobro = numero * 2;
-        Console.WriteLine("Dobro = " + dobro);
+        // entrada de dados
+        Console.Write("Informe o custo de fábrica: ");
+        double custoFabrica = double.Parse(Console.ReadLine());
+        // processamento de dados
+        double custoDistribuidor = custoFabrica * 0.28;
+        double imposto = custoFabrica * 0.45;
+        double custoConsumidor = custoFabrica + custoDistribuidor + imposto;
+        // saida de dados
+        Console.WriteLine("Custo ao consumidor: {0:N2}", custoConsumidor);
     }
 }
